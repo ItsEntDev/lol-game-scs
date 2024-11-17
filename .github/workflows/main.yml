@@ -2,7 +2,7 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - main # If your default branch is named something else, change this
+      - main
 
 permissions:
   contents: write
@@ -28,7 +28,7 @@ jobs:
       - name: Prepare Deployment Directory
         run: |
           mkdir -p ./deploy
-          cp ./target/wasm32-unknown-unknown/release/my-game.wasm ./deploy/
+          cp ./target/wasm32-unknown-unknown/release/lastoneloses.wasm ./deploy/
           cp index.html ./deploy/
 
       - name: Deploy
