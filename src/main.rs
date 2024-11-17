@@ -3,6 +3,7 @@ mod common;
 
 use macroquad::prelude::*;
 use ::rand;
+
 use config::window_conf;
 
 #[macroquad::main(window_conf)]
@@ -37,7 +38,10 @@ async fn main() {
         if is_key_down(KeyCode::D) {
             x += config::SQUARE_SPEED * delta;
         }
-
+        
+        x = x.clamp(0.0, screen_width() - 64.0);
+        y = y.clamp(0.0, screen_height() - 64.0);
+        
         // Do rendering
         draw_text(
             &text,
