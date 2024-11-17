@@ -9,6 +9,7 @@ pub const HEIGHT_WINDOW_FALLBACK: i32 = 720;
 pub const NAME_WINDOW: &'static str = "Game Test";
 
 pub const DEFAULT_COLOUR: Color = common::rgba!(51, 0, 175);
+pub const SQUARE_SPEED: f32 = 128.0;
 
 pub fn window_conf() -> Conf {
     if let Some(a) = std::env::args().nth(1) {
